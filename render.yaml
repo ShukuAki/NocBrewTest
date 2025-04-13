@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: nocbrewtest
+    env: dotnet
+    plan: free
+    buildCommand: dotnet build NocBrewTest/NocBrewTest.csproj -c Release
+    startCommand: dotnet NocBrewTest/bin/Release/net6.0/NocBrewTest.dll
+    buildFilter:
+      paths:
+        - NocBrewTest/**
